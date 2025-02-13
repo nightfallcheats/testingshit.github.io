@@ -1,0 +1,251 @@
+input {
+    font-size: 3.45em;
+    width: calc(100% - 2px);
+    background-color: #000;
+    border: 1px solid #FF0;
+    color: #FF0;
+    font-family: Heading;
+    letter-spacing: 6px;
+    text-align: center;
+    box-shadow: 0px 4px #FF0;
+}
+
+.bad input {
+    color: #F00;
+    border: 1px solid #F00;
+    box-shadow: 0px 4px #F00;
+}
+
+.good input {
+    color: #0F0;
+    border: 1px solid #0F0;
+    box-shadow: 0px 4px #0F0;
+}
+
+.bad h2 {
+    color: #F00;
+}
+
+.good h2 {
+    color: #0F0;
+}
+
+.bad#block {
+    box-shadow: 0px 0px 256px rgba(255, 0, 0, 0.3);
+    transition: 0.1s;
+}
+
+.good#block {
+    box-shadow: 0px 0px 256px rgba(0, 255, 0, 0.3);
+    transition: 0.1s;
+}
+
+#confirm {
+    font-size: 3em;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #FF0;
+    color: #FF0;
+    text-align: center;
+    margin-top: 0.4em;
+    cursor: pointer;
+    box-shadow: 0px 8px #FF0, 0px 8px 32px rgba(255, 255, 0, 0.3), inset 0px 8px 32px rgba(255, 255, 0, 0.3);
+    font-family: A;
+    position: relative;
+    top: 0px;
+}
+
+.bad #confirm {
+    color: #F00 !important;
+    border: 1px solid #F00 !important;
+    top: 6px !important;
+    box-shadow: 0px 2px #F00, 0px 8px 64px rgba(255, 0, 0, 0.4), inset 0px 8px 64px rgba(255, 0, 0, 0.4) !important;
+}
+
+.good #confirm {
+    color: #0F0 !important;
+    border: 1px solid #0F0 !important;
+    top: 6px !important;
+    box-shadow: 0px 2px #0F0, 0px 8px 64px rgba(0, 255, 0, 0.4), inset 0px 8px 64px rgba(0, 255, 0, 0.4) !important;
+}
+
+#confirm:hover,
+.wait#confirm {
+    color: #F80;
+    border: 1px solid #F80;
+    box-shadow: 0px 4px #F80, 0px 8px 64px rgba(255, 155, 0, 0.4), inset 0px 8px 64px rgba(255, 155, 0, 0.4);
+    top: 4px;
+}
+
+.bad {
+    animation: 0.25s shake infinite linear;
+}
+
+@keyframes shake {
+    0% {
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+
+    10% {
+        position: relative;
+        left: -1px;
+        top: -2px;
+    }
+
+    20% {
+        position: relative;
+        left: 2px;
+        top: -1px;
+    }
+
+    30% {
+        position: relative;
+        left: 0px;
+        top: -4px;
+    }
+
+    40% {
+        position: relative;
+        left: 2px;
+        top: -1px;
+    }
+
+    50% {
+        position: relative;
+        left: -1px;
+        top: 2px;
+    }
+
+    60% {
+        position: relative;
+        left: 4px;
+        top: -3px;
+    }
+
+    70% {
+        position: relative;
+        left: -2px;
+        top: 2px;
+    }
+
+    80% {
+        position: relative;
+        left: 4px;
+        top: -2px;
+    }
+
+    90% {
+        position: relative;
+        left: -1px;
+        top: 1px;
+    }
+
+    100% {
+        position: relative;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+#c {
+    background-color: #FF0;
+    margin-top: 0.8em;
+    color: #000;
+}
+
+#c img {
+    width: 12.5em;
+    border: 8px solid #000;
+    margin-top: -8px;
+    margin-bottom: -17px;
+}
+
+#c input {
+    width: 6em;
+    position: relative;
+    top: -0.15em;
+}
+
+#c>div {
+    display: inline-block;
+    width: 45em;
+}
+
+#c a {
+    font-size: 2em;
+    position: relative;
+    top: -0.5em;
+    left: 0.5em;
+    font-family: A;
+}
+
+.bad #c {
+    background-color: #F00;
+}
+
+.good #c {
+    background-color: #0F0;
+}
+
+#block.nope {
+    max-height: 0px;
+    padding-bottom: 0px;
+    transition: 0.4s;
+}
+
+#block.nah {
+    opacity: 0;
+}
+
+#lain.nope {
+    opacity: 0;
+}
+
+#fadein {
+    transition: 1s;
+}
+
+#fadein.nope {
+    opacity: 0;
+}
+
+#note {
+    text-align: center;
+    transition: 1s;
+}
+
+#note span {
+    color: #FF0;
+}
+
+.badd#note span {
+    color: #F00;
+}
+
+.goodd#note span {
+    color: #0F0;
+}
+
+#note.nope {
+    opacity: 0;
+}
+
+#eidcube,
+#confirmcube {
+    transition: 1s;
+}
+
+#eidcube.nope,
+#confirmcube.nope {
+    opacity: 0;
+}
