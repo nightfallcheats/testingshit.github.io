@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOSHI</title>
+
+  <link rel="icon" href="res/icons/hoshi‑round‑favicon.png" type="image/png">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="HOSHI Project">
+  <meta property="og:description" content="Unlock the Project. Unlock the Future.">
+  <meta property="og:image" content="res/icons/hoshi‑round‑favicon.png">
+
+  <!-- Other Meta Tags -->
+  <meta name="description" content="The Aurora Provider for all systems in our reality.">
+
+  <!-- JAVASCRIPTS -->
+
+  <!-- External -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+  <!-- INTERNAL -->
+  <script src="scripts/audio‑data.js"></script>
+  <script src="scripts/notification.js"></script>
+  <script src="scripts/sfx‑main.js"></script>
+  <script src="scripts/randomize.js"></script>
+  <script src="scripts/timer.js"></script>
+  <script src="scripts/space.js"></script>
+  <script src="scripts/loader.js"></script>
+
+
+  <!-- SERVER ALIVE STATUS CHECK -->
+  <script src="scripts/server/response.js"></script>
+
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/custom-menu.css">
+  <link rel="stylesheet" href="css/fade.css">
+  <link rel="stylesheet" href="css/custom-sections.css">
+  <link rel="stylesheet" href="css/sitemap.css">
+  <link rel="stylesheet" href="css/override.css">
+  <link rel="stylesheet" href="css/marquee.css">
+  <link rel="stylesheet" href="css/sitemap-icons.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/screen-loading.css">
+  <link rel="stylesheet" href="css/intro-dependency.css">
+
+  <!-- CUSTOM BUTTON COLORS -->
+  <link rel="stylesheet" href="css/button/button-aqua.css">
+  <link rel="stylesheet" href="css/button/button-blue.css">
+  <link rel="stylesheet" href="css/button/button-purple.css">
+
+  <link rel="stylesheet" href="css/button/custom-buttons/button-big.css">
+  <link rel="stylesheet" href="css/button/custom-buttons/button-intro.css">
+
+  <style>
+    /* Heading font style */
+    h1 {
+      font-family: 'heading';
+      font-size: 2em;
+      color: #fff;
+    }
+
+    #knob5 {
+      position: absolute;
+      top: 25;
+      /* Align it with the top of the header */
+      right: 100;
+      /* Align it with the right side of the header */
+    }
+
+    /* Paragraph font style */
+    p {
+      font-family: 'Paragraph';
+      color: #fff;
+    }
+
+    #content {
+      display: none; /* Hide content initially */
+    }
+
+    /* Full-screen black overlay */
+    #blackOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      opacity: 0;
+      /* Initially invisible */
+      z-index: 9999;
+      /* Ensure it is on top */
+    }
+
+    .footer-block {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0.5em;
+    }
+
+    .footer-block_left {
+      text-align: left;
+    }
+
+    .footer-block_right {
+      text-align: right;
+    }
+
+    #footer-logo {
+      height: 4em;
+    }
+
+    #headernews {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    #headernews span {
+      padding-right: 100px;
+      font-family: heading, sans-serif;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-200%);
+      }
+    }
+
+/* Header section style */
+header {
+  background-image: url('https://classic.systemspace.network/res/img/bg/home.png');
+  background-size: 150%; /* Increase the background image size */
+  background-position: center;
+  height: 400px; /* Keep the original height or adjust as needed */
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+    #sitemap {
+    position: absolute;
+    top: 700px; /* Increase this value to move it lower */
+    right: 20px; /* Stays on the right */
+    width: 250px; /* Adjust as needed */
+     /* Optional background */
+    padding: 15px;
+
+
+    border: 2px solid #FFDF9B; /* Added yellow border */
+    }
+
+
+    .header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1.5); /* Increase the scaling factor */
+  text-align: center;
+  font-size: 3rem;
+}
+
+
+
+    /* Optional: Adjust for further positioning */
+    .header-content {
+      left: 20%;
+      /* Move the text more to the right */
+      transform: translateX(-60%) translateY(-50%);
+      /* Keeps vertical centering and adjusts horizontal positioning */
+    }
+
+    /* New image (additional content) on the right side */
+    .header-image {
+      position: absolute;
+      top: 50%;
+      /* Vertically center the image */
+      right: 10%;
+      /* Position the image 10% from the right */
+      transform: translateY(-50%);
+      /* Vertically center the image */
+      max-height: 200px;
+      /* Limit the image size */
+    }
+
+    /* Text shadow and glow effect for header text */
+    header h1,
+    header p {
+      text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1);
+      /* Black glow effect */
+    }
+
+    /* Optional: Adjusting the size of the images */
+    header img {
+      max-height: 10em;
+    }
+
+    /* Section Styles */
+    .custom-section {
+      width: 60%;
+      /* Set to a smaller width */
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #111;
+      background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 0;
+      /* Remove rounded corners */
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+      /* Glowing effect */
+    }
+
+    /* Heading Style */
+    .custom-section h1 {
+      font-size: 2em;
+      font-family: 'Arial', sans-serif;
+      color: #FFF;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 1);
+      /* Glow effect */
+    }
+
+    /* Paragraph Style */
+    .custom-section p {
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    /* Footer Styles */
+    footer {
+      margin-top: 30px;
+      padding: 1px;
+      background-color: #000000;
+      color: #FFDF9B;
+      text-align: center;
+      filter: drop-shadow(0 0 15px rgba(255, 223, 155, 0.7));
+      /* Glow effect */
+    }
+
+    #intro {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 3rem;
+      color: #FFDF9B;
+      white-space: nowrap;
+    }
+
+
+#main-content {
+  display: none; 
+}
+
+
+
+    #intro h1 {
+      font-size: 2rem;
+      padding-top: 50px;
+      font-family: Heading;
+
+      text-shadow: 3px 6px #1a1919, 0px -1px #1a1919, 0px 1px #1a1919, -1px 0px #1a1919, 1px 0px #1a1919, -1px -1px #1a1919, 1px 1px #1a1919, -1px 1px #1a1919, 1px -1px #1a1919;
+    }
+
+    .slim {
+      width: 60%;
+      /* Optional: Adjust width as needed */
+      margin: 0 auto;
+      /* Center section horizontally */
+      padding: 20px;
+      text-align: center;
+      /* Centers text and inline elements */
+      display: flex;
+      /* Enable flexbox */
+      flex-direction: column;
+      /* Arrange items in a column */
+      align-items: center;
+      /* Center items horizontally */
+      justify-content: center;
+      /* Center items vertically */
+    }
+
+    .slim img {
+      max-height: 5em;
+      margin-bottom: 20px;
+      /* Optional: Adds space below the image */
+    }
+
+  #preload-screen {
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#enter-button {
+  font-size: 24px;
+  padding: 15px 30px;
+  cursor: pointer;
+  background-color: #ffdf9b; /* Matching your website theme */
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+
+    .slim h1 {
+      font-size: 2em;
+      /* Adjust font size as needed */
+      color: #FFF;
+      /* Text color */
+    }
+
+    /* This part will remain sticky at the top */
+    #headerbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      /* Ensure it stays on top of other content */
+      background-color: black;
+      /* Add a background color for visibility */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    #headerbar marquee {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    #headerbar img {
+      max-height: 50px;
+      /* Adjust the image size in the header */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    /* Keep the rest of the header section normal */
+    header {
+      background-image: url('https://classic.systemspace.network/res/img/bg/home.png');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      /* Header height */
+      position: relative;
+    }
+
+    #main-marquee, #main-content {
+            display: none;
+    }
+
+    #headerbar marquee {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    #headerbar img {
+      max-height: 50px;
+      /* Adjust the image size in the header */
+      height: auto;
+      margin-right: 10px;
+    }
+
+    /* Make the headerbar sticky at the top */
+    #headerbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    /* Ensure the knobs are positioned next to the headerbar */
+    #headerbar a {
+      position: sticky;
+      top: 0;
+      /* Keep them aligned with the headerbar */
+      margin: 0 5px;
+      /* Space between the knobs */
+    }
+
+    /* Marquee styling */
+    #headerbar marquee {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    #headerbar img {
+      max-height: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    /* Keep the rest of the header section normal */
+    header {
+      background-image: url('https://classic.systemspace.network/res/img/bg/home.png');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      position: relative;
+    }
+
+    /* Force the images to scale */
+    #headerstatus,
+    #headerfade_left {
+      max-height: 50px;
+      /* Maximum height for images */
+      height: auto;
+      /* Let the height adjust automatically to maintain aspect ratio */
+      margin-right: 10px;
+    }
+
+    .newssep {
+      max-height: 20px;
+      height: auto;
+      margin: 0 5px;
+    }
+
+    /* Marquee Styles */
+    marquee {
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    marquee p {
+      display: inline;
+      padding-right: 20px;
+    }
+
+    /* Styling for Knobs */
+    #knob,
+    #knob4,
+    #knob5,
+    #knob2 {
+      max-height: 40px;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    .seperator {
+      width: 100%;
+      height: 32px;
+      background-image: url(https://classic.systemspace.network/res/img/ui/seperator.png)
+    }
+
+    .seperate {
+      width: 100%;
+      height: 32px;
+      background-image: url(https://classic.systemspace.network/res/img/ui/seperate.png)
+    }
+
+    #motto {
+      font-size: 30px;
+      /* Adjust font size as needed */
+      font-weight: bold;
+      /* Make it bold for better effect */
+      color: #fff;
+      /* White text color (adjust as needed) */
+      text-shadow:
+        5px 5px 5px rgba(0, 0, 0, 0.5),
+        /* Soft black shadow for depth */
+        0 0 10px rgba(0, 0, 0, 0.8),
+        /* Green glow */
+        0 0 20px rgba(0, 0, 0, 0.8),
+        /* Larger green glow */
+        0 0 30px rgba(0, 0, 0, 1);
+      /* Even larger green glow */
+    }
+
+    #motto-main {
+    font-family: "Heading", sans-serif;
+    font-size: 2.8vw;
+    text-shadow: 3px 6px #000, 0px -1px #000, 0px 1px #000, -1px 0px #000, 1px 0px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000, 1px -1px #000;
+    color: #FFF;
+    margin-left: 500px; /* Adjust the value to move the element more */
+    }
+
+
+
+    #hoshi-project {
+      background-color: #000000;
+      /* Dark background color */
+      padding: 10px;
+      /* Add space around content */
+      text-align: center;
+      /* Center align the content */
+      color: white;
+      /* Text color for section */
+    }
+
+    .company-images a {
+      margin: 10px;
+      display: inline-block;
+      /* Display images next to each other */
+    }
+
+    .company-images img {
+      width: 75px;
+      /* Make the images smaller */
+      height: auto;
+      /* Maintain aspect ratio */
+      border-radius: 10px;
+      /* Optional: adds rounded corners to images */
+    }
+  </style>
+
+</head>
+
+<audio id="MainAudio">
+  <source src="https://classic.systemspace.network/res/audio/bgm/superbgm.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="AmbienceAudio">
+  <source src="https://classic.systemspace.network/res/audio/ambience/7.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="Ambience2Audio">
+  <source src="https://classic.systemspace.network/res/audio/ambience/2.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+<audio id="IntroAudio">
+  <source src="https://classic.systemspace.network/res/audio/sfx/welcome.ogg" type="audio/ogg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+
+let inactivityTimer;
+const areyoustillthere = new Audio("https://new.systemspace.network/res/audio/sfx/dialog.ogg"); // Replace with your actual audio file
+
+function resetTimer() {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    areyoustillthere.play(); // Play the audio when inactive
+    alert("Are you still there?");
+  }, 60000); // 30 seconds of inactivity
+}
+
+// Detect activity and reset the timer
+document.addEventListener("mousemove", resetTimer);
+document.addEventListener("keypress", resetTimer);
+resetTimer();
+
+
+
+  async function playBoth() {
+    const halo = new Audio('https://new.systemspace.network/res/audio/sfx/halo.ogg');
+    const bliss = new Audio('https://new.systemspace.network/res/audio/sfx/bliss.ogg');
+    halo.volume = 0.5;
+    bliss.volume = 0.5;
+    try {
+      await Promise.all([halo.play(), bliss.play()]);
+      console.log("Both audio tracks are playing simultaneously.");
+    } catch (error) {
+      console.error("Error playing the tracks:", error);
+    }
+  }
+
+  function haloBliss() {
+    const halo = new Audio('https://new.systemspace.network/res/audio/sfx/halo.ogg');
+    const bliss = new Audio('https://new.systemspace.network/res/audio/sfx/bliss.ogg');
+    const overlay = document.getElementById("blackOverlay");
+
+    mainOther.volume = 0.5;
+    mainOther.volume = 0.4;
+    mainOther.volume = 0.3;
+    mainOther.volume = 0.2;
+    mainOther.volume = 0.1;
+
+    //ambience.volume = 1;
+    //ambience.volume = 0.9;
+    //ambience.volume = 0.8;
+    //ambience.volume = 0.7;
+    //ambience.volume = 0.6;
+    //ambience.volume = 0.5;
+    //ambience.volume = 0.4;
+    //ambience.volume = 0.3;
+    //ambience.volume = 0.2;
+    //ambience.volume = 0.1;
+
+    //Ambience set to 0 when haloBliss is initiated
+    //ambience.volume = 0.0;
+
+    playBoth();
+    $("#header").fadeOut();
+    $("#main-marquee").fadeOut();
+    $("#main-content").fadeOut();
+    $("#header-image").fadeIn();
+
+    // Add a transition effect to the body element
+    document.body.style.transition = "background-color 3s ease";
+
+    // Change the background color to white
+    document.body.style.backgroundColor = "white";
+
+    let opacity = 0; // Start opacity value
+    let interval = setInterval(function() {
+      if (opacity < 1) {
+        opacity += 0.05; // Increase opacity gradually
+        overlay.style.opacity = opacity; // Apply new opacity value
+      } else {
+        clearInterval(interval); // Stop when fully black
+      }
+    }, 60); // Adjust the interval timing for smoother/rougher transition (60ms here)
+    // After 3 seconds, redirect to the "thank you" page
+    setTimeout(function() {
+      window.location = "https://theprojectofficial.github.io/pages/compendium/compendium.html";
+    }, 3000);
+  }
+</script>
+
+<script>
+
+    const intro = new Audio('https://classic.systemspace.network/res/audio/sfx/welcome.ogg');
+    const ambience = new Audio('https://classic.systemspace.network/res/audio/ambience/7.ogg');
+    const main = new Audio('https://classic.systemspace.network/res/audio/bgm/superbgm.ogg');
+    const ambience2 = new Audio('https://classic.systemspace.network/res/audio/ambience/2.ogg');
+    const mainOther= new Audio("res/audio/main-loop-new.mp3");
+    const ambience1= new Audio("res/audio/ambience-1.mp3");
+
+    // Get the audio element and intro div
+    const randombackgroundmusic = document.getElementById('randombackgroundmusic');
+
+    main.volume = 0.5;
+    mainOther.volume = 0.3;
+
+    intro.volume = 0.6;
+
+    ambience1.volume = 0.05;
+    ambience.volume = 0.5;
+    ambience2.volume = 0.5;
+
+    mainOther.loop = true;
+    main.loop = true;
+    ambience.loop = true;
+    intro.loop = false;
+    ambience2.loop = true;
+
+    // Function to start intro text animation
+    function PlayText() {
+      console.log("Intro Text Started");
+
+      //hide intro logo when start is initiated
+      $("#intro img").hide();
+
+      // Set h2, h5, and p elements inside the intro to "(nothing)"
+      $("#intro h2").text("");
+      $("#intro h5").text("");
+      $("#intro p").text("");
+
+      setTimeout(() => { $("#intro h1").html("GAT_").css("font-size", "50px"); }, 100);
+      setTimeout(() => { $("#intro h1").html("GATES\\").css("font-size", "50px"); }, 200);
+      setTimeout(() => { $("#intro h1").html("GATES OP|").css("font-size", "50px"); }, 300);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN/").css("font-size", "50px"); }, 400);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN-").css("font-size", "50px"); }, 500);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN\\").css("font-size", "50px"); }, 600);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN|").css("font-size", "50px"); }, 700);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN/").css("font-size", "50px"); }, 800);
+      setTimeout(() => { $("#intro h1").html("GATES OPEN-").css("font-size", "50px"); }, 900);
+      setTimeout(() => { $("#intro h1").html("GATES O\\").css("font-size", "50px"); }, 1000);
+      setTimeout(() => { $("#intro h1").html("GAT|").css("font-size", "50px"); }, 1100);
+      setTimeout(() => { $("#intro h1").html("/").css("font-size", "50px"); }, 1200);
+      setTimeout(() => { $("#intro h1").html("-").css("font-size", "50px"); }, 1300);
+      setTimeout(() => { $("#intro h1").html("\\").css("font-size", "50px"); }, 1400);
+      setTimeout(() => { $("#intro h1").html("Unlo|").css("font-size", "50px"); }, 1500);
+      setTimeout(() => { $("#intro h1").html("Unlock t/").css("font-size", "50px"); }, 1600);
+      setTimeout(() => { $("#intro h1").html("Unlink the wor-").css("font-size", "50px"); }, 1700);
+      setTimeout(() => { $("#intro h1").html("Unlink the world.<br>Un\\").css("font-size", "50px"); }, 1800);
+      setTimeout(() => { $("#intro h1").html("Unlink the world.<br>Unlock th|").css("font-size", "50px"); }, 1900);
+      setTimeout(() => { $("#intro h1").html("Unlink the world.<br>Unlock the project./").css("font-size", "50px"); }, 2000);
+      setTimeout(() => { $("#intro h1").html("Unlink the world.<br>Unlock the project.").css("font-size", "50px"); }, 2100);
+
+      // After intro, hide it and show main content
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+
+        //main.play();
+
+        //ambience
+        //ambience1.play();
+
+        mainOther.play();
+
+        $("#intro").fadeOut();
+        $("#main-content").fadeIn();
+        $("#main-marquee").fadeIn();
+      }, 2300);
+    }
+
+    // Fade in the intro section when the page loads
+    $(document).ready(function() {
+      $("#intro").fadeIn(2000); // Fades in over 2 seconds
+
+      // Trigger intro animation when user clicks anywhere inside the intro div
+      $("#intro").click(function() {
+        intro.play();
+
+        //ambience1.play();
+
+        ambience.play();
+        ambience2.play();
+        PlayText();
+      });
+    });
+
+</script>
+
+<body>
+  
+  <div id="intro">
+
+    <img src="https://theprojectofficial.github.io/stuff/hoshiwhite.png" alt="Description of image" width="125" height="auto">
+
+    <audio id="audio" src="res/audio/randombackgroundmusic.ogg" autoplay loop></audio>
+
+    <!-- Left empty for intro -->
+    <h1></h1>
+
+    <h2 style="font-size: 40px; color: #FFF; font-family: heading;" >HOSHI Project</h2>
+    <h5>Click anywhere in the middle to enter</h5>
+
+    <div id="status-container"></div>
+
+    <h5 style="font-size: 30px; color: gray; font-family: heading;" >Attempting to bypass this <br>(can cause issues on Chrome and related browsers)</h5>
+  </div>
+
+  <div id="main-marquee">
+    <header>
+      <div id="header">
+        <div id="headerbar">
+          <!--<a href="/status"><img id="headerstatus" src="https://classic.systemspace.network/res/img/headerbar/status-ok.png" alt="Status"></a>-->
+          <!-- <img id="headerfade_left" src="https://classic.systemspace.network/res/img/headerbar/fade-left.png" alt="Fade Left"> -->
+          <div class="news-scroller">
+            <div class="news-items">
+              <!-- First News Item -->
+              <div class="news-item">
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="font-family: heading, sans-serif;">Welcome to the HOSHI project's homepage</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Registrations open</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="font-family: heading, sans-serif;">1500 users Registered</p>
+              </div>
+          
+              <!-- Second News Item -->
+              <div class="news-item">
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <a href="">
+                  <p style="font-family: heading, sans-serif;">Latest News: Website Recoded!</p>
+                </a>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Server Status: Online!</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Auroraric Status: Online and Active!</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+              </div>
+          
+              <!-- Repeat News Items to Make it Seamless -->
+              <div class="news-item">
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="font-family: heading, sans-serif;">Welcome to the HOSHI project's homepage</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Registrations open</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="font-family: heading, sans-serif;">1500 users Registered</p>
+              </div>
+          
+              <!-- Repeat Second News Item -->
+              <div class="news-item">
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <a href="">
+                  <p style="font-family: heading, sans-serif;">Latest News: Website Recoded!</p>
+                </a>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Server Status: Online!</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+                <p style="color: lime; font-family: heading, sans-serif;">Auroraric Status: Online and Active!</p>
+                <img class="newssep" src="https://classic.systemspace.network/res/img/headerbar/sep.png" alt="Separator">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <a href="/"><img class="hoshi" id="knob" src="https://theprojectofficial.github.io/new/hoshi%E2%80%91knob.png"></a>
+        <a href="login.html"><img class="login" id="knob5" src="https://theprojectofficial.github.io/new/login%E2%80%91knob.png" /></a>
+      </div>
+
+      <!-- First content (left-aligned text) -->
+      <div class="header-content">
+        <!--<img src="https://raw.githubusercontent.com/TheProjectOfficial/theprojectofficial.github.io/refs/heads/main/stuff/hoshiwhite.png" style="max-height: 10em;"> -->
+        <h1 id="motto-main">Unlock the Project. <br>Unlock the Future. </h1>
+      </div>
+      <!-- Second content (image further to the right) -->
+      <a href="javascript:void(0)" onclick="haloBliss()">
+        <img class="header-image" src="res/images/lain.png" alt="MainLain" style="max-height: 25em;">
+      </a>
+    </header>
+
+  </div>
+
+  <!-- Main content -->
+  <div id="main-content">
+
+    <div class="seperate"></div>
+
+    <div id="bg-dots"></div>
+
+    <center>
+
+      <section id="hoshi-project">
+        <h1 class="glowing-text" style="color: #FFDF9B;">Welcome to the Hoshi Project</h1>
+        <div class="company-images">
+          <!-- Wrap images with anchor tags to make them clickable -->
+          <a href="https://google.com" target="_blank">
+            <img class="image1" src="https://theprojectofficial.github.io/new/syn%E2%80%91yellow.png" alt="Company 1" />
+          </a>
+          <a href="https://google.com" target="_blank">
+            <img class="image2" src="https://theprojectofficial.github.io/new/hoshi%E2%80%91yellow.png" alt="Company 2" />
+          </a>
+          <a href="https://google.com" target="_blank">
+            <img class="image3" src="https://theprojectofficial.github.io/new/haiku%E2%80%91yellow.png" alt="Company 2" />
+          </a>
+          <!-- Add more images with anchor tags if needed -->
+        </div>
+      </section>
+
+      <!-- TO DO -->
+      
+      <section id="sitemap">
+
+        <section>
+          <h1 class="fuckoff" style="font-size: 25px; color: #FFDF9B;" >Registrants</h1>
+
+          <a href="content/registrants.html">
+            <p style="font-size: 20px; color: #FFDF9B; font-family: heading;" >1500 registered</p>
+          </a>
+        </section>
+
+        <section>
+          <h1 class="fuckoff" style="font-size: 25px; color: #FFDF9B; font-family: heading;" >Until Unlock</h1>
+
+          <h1 class="statistic timer" id="demo" data-count="5817" style="font-size: 16px; color: #FFDF9B; font-family: heading;">???</h1>
+        </section>
+
+        <a class="sitemap-header cur-upup" href="content/hoshi/about.html">
+          <div id="sitemap_hoshi"></div>HOSHI
+        </a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/status.html">Status</a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/glossary.html">Glossary</a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/contact.html">Contact Hoshi</a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/faq.html">FAQ</a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/community.html">Community</a>
+        <a class="sitemap-item cur-upup" href="content/hoshi/representative.html">Representative</a>
+
+        <p></p>
+
+        <a class="sitemap-header cur-upup" href="/content/synapse/index.html">
+          <div id="sitemap_haiku"></div>HAIKU
+        </a>        
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">EoT</a>
+        <a class="sitemap-item cur-upup" href="content/haiku/about.html">About</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Our Goal</a>
+
+        <p></p>
+
+        <a class="sitemap-header cur-upup" href="/content/synapse/index.html">
+          <div id="sitemap_synapse"></div>SYNAPSE
+        </a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">EoT</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">About</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Our Goal</a>
+
+        <p></p>
+
+        <a class="sitemap-header cur-upup" href="/content/synapse/index.html">
+          <div id="sitemap_community"></div>COMMUNITY
+        </a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Discord</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Atabook</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Representative Contact</a>
+
+        <a class="sitemap-header cur-upup" href="/content/legal/index.html">
+        <div id="sitemap_legal"></div>LEGAL RIGHTS
+        </a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">ToS</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Privacy Policy</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">Copyright</a>
+        <a class="sitemap-item cur-upup" href="/content/risen/eot.html">What we may Collect</a>
+      </section>
+
+      <br></br>
+      
+      <!-- Hoshi News -->
+      <section class="randomize-color">
+          <h1 style="font-family: heading, sans-serif;">HOSHI NEWS</h1>
+          <h1 style="font-family: heading, sans-serif; font-size: 17px;">Warning about the alternate pages</h1>
+      
+          <p>Audio wont play in the pages listed on the sitemap unless the user clicks anywhere on the page. <br>
+          Sadly, there is no workaround i could find when it comes to autoplay audio.
+          </p>
+
+          <p><em> ~HoshiRep</em></p>
+
+          <p>For more news and information, access our News page: <a href="https://example.com" style="text-decoration: underline;">Here</a></p>
+      </section>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <!-- What is the Hoshi Project -->
+      <section class="randomize-color">
+        <h1 style="font-family: heading, sans-serif;">Welcome to the HOSHI Project</h1>
+        <p>This website has been made to facilitate the broadcasting of all HOSHI messages and to allow interaction between the Project's registrants. A simple summary of the HOSHI project can be read below.</p>
+      </section>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <!-- What is our goal -->
+      <section class="randomize-color">
+        <h1 style="font-family: heading, sans-serif;">A quick Summary</h1>
+        <p>Our goal used to be providing the best free Cheating experience for everyone for free. After the betrayal, have we decided that we are going to start to manage aurora and auroraric transfers. You might ask "What do you mean by betrayal" well, simply to say is we used to be a server using auroras power, and Connet (The Provider) used to provide us with aurora, but they decided they would betray everybody, and try to purge and delete all databases and aurora. I and all other companies like: Synapse and Haiku have taken responsibility in providing a safe Aurora.</p>
+      </section>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <!-- Whats Aurora -->
+      <section class="randomize-color">
+        <h1 style="font-family: heading, sans-serif;">What is aurora</h1>
+        <p>You can look at it like this, aurora is a type of energy, that is user for many databases in Connet Network servers, we only have limited amount of aurora to use, thats why we have a limited registrants amount. If this Aurora gets used wrongly, all other systems could corrupt, resulting in the whole systems crashing altogether. thats why Connet is helping us during this process and providing us with the perfect Aurora Amount for our needs.</p>
+      </section>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <!-- Whats Aurora -->
+      <section class="randomize-color">
+          <h1 style="font-family: heading, sans-serif;">Our Links</h1>
+          <p>Important links you may need are going to be mentioned below. <br> <br>Our Discord: <a href="https://example.com" style="text-decoration: underline;">Discord</a> <br>Our Atabook: <a href="https://example.com" style="text-decoration: underline;">Atabook</a> <br>Our Compendium: <a href="https://example.com" style="text-decoration: underline;">Compendium</a> <br>Our News Page: <a href="https://example.com" style="text-decoration: underline;">News</a> <br>My Contact Information: <a href="https://example.com" style="text-decoration: underline;">Contact me for information!</a></p>
+      </section>
+
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <div id="notification" class="notification">You copied some text!</div>
+
+      <audio id="registerSound" src="https://new.systemspace.network/res/audio/sfx/default.ogg"></audio>
+
+        <button class="button-big">
+          Register
+        </button>        
+
+      <audio id="hover-audio">
+        <source src="/resources/audio/sfx/dialog-cancel.ogg" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <audio id="copy">
+        <source src="/resources/audio/sfx/dialog-cancel.ogg" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <br></br>
+
+      <footer>
+
+        <div class="footer-block footer-block_left">
+            <img class="image2" src="https://theprojectofficial.github.io/new/hoshi%E2%80%91yellow.png" style="max-height: 5em;" />
+        </div>
+        <div class="footer-block footer-block_left">
+            <p style="color: #ffdf9b;">
+                COPYRIGHT HOSHI 2025-2026 (HTS) <br> 
+                We have not been served any secret court orders and are not under any gag orders. <br> 
+                All assets on this website is owned by its respective owners. - HoshiRep
+                More info in <a href="copyright">Copyright</a>
+            </p>
+        </div>
+
+      </footer>
+
+    </center>
+
+  </div>
+  </div>
+
+</body>
+</html>
