@@ -1,0 +1,15 @@
+.image1:hover {
+    content: url("https://theprojectofficial.github.io/new/synapseLogoButton.png"); /* Change to hover image */
+}
+.image2:hover {
+    content: url("https://theprojectofficial.github.io/stuff/hoshiwhite.png");
+}
+.image3:hover {
+    content: url("https://theprojectofficial.github.io/new/haikuLogoButton.png");
+}
+.hoshi:hover {
+    content: url("https://theprojectofficial.github.io/new/hoshi_knob_yellow.png");
+}
+.login:hover {
+    content: url("https://theprojectofficial.github.io/new/login_knob_yellow.png");
+}

@@ -1,0 +1,23 @@
+#sitemap_hoshi {
+    background-image: url("https://theprojectofficial.github.io/new/icons/sitemap/hoshi16x.png");
+  }
+
+  #sitemap_haiku {
+    background-image: url("https://theprojectofficial.github.io/new/icons/sitemap/haiku16xNonTransparent.png");
+    background-size: contain;
+  }
+
+  #sitemap_synapse {
+    background-image: url("https://theprojectofficial.github.io/new/icons/sitemap/synapse16xNonTransparent.png");
+    background-size: contain;
+  }
+
+  #sitemap_community {
+    background-image: url("https://theprojectofficial.github.io/new/icons/sitemap/community16xNonTransparentLetter.png");
+    background-size: contain;
+  }
+
+  #sitemap_legal {
+    background-image: url("https://theprojectofficial.github.io/new/icons/sitemap/legalrights16xTransparent.png");
+    background-size: contain;
+  }

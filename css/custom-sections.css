@@ -1,0 +1,265 @@
+/* Section Styles */
+.custom-section-purple {
+    width: 75%; /* Set to a smaller width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0; /* Remove rounded corners */
+    filter: drop-shadow(0 0 15px rgba(83, 72, 122, 0.9)); /* Glowing effect */
+
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-purple h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #53487A;
+    text-shadow: 0 0 5px rgba(83, 72, 122, 0.7), 0 0 10px rgba(83, 72, 122, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-purple p {
+    color: #53487A;
+    margin-top: 10px;
+}
+
+.custom-section-aqua {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    filter: drop-shadow(0 0 15px rgba(77,140,137, 0.5));
+    
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-aqua h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #4d8c89;
+    text-shadow: 0 0 5px rgba(77,140,137, 0.7), 0 0 10px rgba(102, 133, 123, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-aqua p {
+   
+    color: #4d8c89;
+    margin-top: 10px;
+}
+
+/* Section Styles */
+.custom-section-bluegray {
+    width: 75%; /* Set to a smaller width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0; /* Remove rounded corners */
+    filter: drop-shadow(0 0 15px rgba(99,115,124, 0.7)); /* Glowing effect */
+
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-bluegray h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #63737c;
+    text-shadow: 0 0 5px rgba(99,115,124, 0.7), 0 0 10px rgba(99,115,124, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-bluegray p {
+    
+    color: #63737c;
+    margin-top: 10px;
+}
+
+/* Section Styles */
+.custom-section-blue {
+    width: 75%; /* Set to a smaller width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0; /* Remove rounded corners */
+    filter: drop-shadow(0 0 15px rgba(48,54,89, 1)); /* Glowing effect */
+
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-blue h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #303659;
+    text-shadow: 0 0 5px rgba(48,54,89, 1), 0 0 10px rgba(48,54,89, 1); /* Glow effect */
+    
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-blue p {
+   
+    color: #303659;
+    margin-top: 10px;
+}
+
+.custom-section-general {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    filter: drop-shadow(0 0 15px rgba(255,223,155, 0.5));
+    
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-general h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #FFDF9B;
+    text-shadow: 0 0 5px rgba(255,223,155, 0.7), 0 0 10px rgba(255,223,155, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-general p {
+   
+    color: #FFDF9B;
+    margin-top: 10px;
+}
+
+.custom-section-green {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    filter: drop-shadow(0 0 15px rgba(124, 252, 0, 0.5));
+    
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-green h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #7CFC00;
+    text-shadow: 0 0 5px rgba(124, 252, 0, 0.7), 0 0 10px rgba(124, 252, 0, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-green p {
+   
+    color: #7CFC00;
+    margin-top: 10px;
+}
+
+.custom-section-red {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    filter: drop-shadow(0 0 15px rgba(252, 0, 0, 0.5));
+    
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-red h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #FC0000;
+    text-shadow: 0 0 5px rgba(252, 0, 0, 0.7), 0 0 10px rgba(252, 0, 0, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-red p {
+   
+    color: #FC0000;
+    margin-top: 10px;
+}
+
+.custom-section-haiku {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    background-image: url('https://classic.systemspace.network/res/img/ui/static/overlay.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0;
+    filter: drop-shadow(0 0 15px rgba(225, 164, 61, 0.5));
+    
+    margin-left: 1%; /* Moves it left */
+}
+
+/* Heading Style */
+.custom-section-haiku h1 {
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: #E1A43D;
+    text-shadow: 0 0 5px rgba(225, 164, 61, 0.7), 0 0 10px rgba(225, 164, 61, 1); /* Glow effect */
+
+    text-align: left;
+    margin-left: -6px;
+}
+
+/* Paragraph Style */
+.custom-section-haiku p {
+   
+    color: #E1A43D;
+    margin-top: 10px;
+}

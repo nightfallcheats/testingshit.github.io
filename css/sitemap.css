@@ -1,0 +1,39 @@
+.sitemap-header {
+    display: block;
+    font-size: 1.2em;
+    font-family: "Heading", sans-serif;
+    margin-top: 0.5em;
+  }
+
+  .sitemap-header img {
+    margin-right: 4px;
+  }
+
+  .sitemap-header div {
+    margin-right: 4px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -1px;
+  }
+
+  .sitemap-item {
+    display: block;
+    margin-left: 22px;
+  }
+
+  .sitemap-deep {
+    margin-left: 40px;
+  }
+
+  .sitemap-item.disabled,
+  .sitemap-header.disabled {
+    color: #000;
+    text-shadow: -1px -1px #888, 0px -1px #888, 1px -1px #888, 1px 0px #888, 1px 1px #888, 0px 1px #888, -1px 1px #888, -1px 0px #888;
+  }
+
+  #sitemap a:hover {
+    filter: brightness(1000%);
+  }

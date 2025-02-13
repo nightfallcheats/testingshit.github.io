@@ -1,0 +1,105 @@
+#intro_logo {
+    width: 10vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0);
+    opacity: 1;
+
+    transition: 0.5s filter, 3.644s top, 1s 2.644s opacity ease-in;
+}
+#intro.playing #intro_logo {
+    filter: brightness(1);
+    top: calc(50% + 1vw);
+    opacity: 0;
+}
+
+#intro_flare-back {
+    width: 15vw;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    mix-blend-mode: lighten;
+
+    transition: 3.644s opacity, 3.644s width, 3.644s top;
+}
+#intro.playing #intro_flare-back {
+    opacity: 1;
+    width: 20vw;
+    top: calc(50% - 1vw);
+}
+
+#intro_flare-top {
+    width: 0vw;
+    position: fixed;
+    left: 50%;
+    top: calc(50% - 4.5vw);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    mix-blend-mode: lighten;
+
+    transition: 3.644s opacity, 3.644s width, 3.644s top;
+}
+#intro.playing #intro_flare-top {
+    opacity: 1;
+    width: 10vw;
+    top: calc(50% - 3.5vw);
+}
+
+#intro_flare-mini_holder {
+    position: fixed;
+    width: 12vw;
+    height: 12vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    mix-blend-mode: lighten;
+
+    transition: 3.644s transform linear, 3.644s top;
+}
+#intro.playing #intro_flare-mini_holder {
+    top: calc(50% + 1vw);
+    transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+#intro_flare-mini {
+    position: absolute;
+    width: 5vw;
+    opacity: 0;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0) rotate(0deg);
+    mix-blend-mode: lighten;
+
+    transition: 3.644s transform linear, 0.5s 1s opacity;
+}
+#intro.playing #intro_flare-mini {
+    transform: translate(-50%, 0) rotate(180deg);
+    opacity: 0.4;
+}
+#intro.playing #intro_flare-mini.hidden {
+    opacity: 0;
+    transition: 3.644s transform linear, 1s opacity;
+}
+
+#intro_welcome {
+    width: 100%;
+    position: fixed;
+    top: calc(50% + 7vw);
+    font-family: "Heading", sans-serif;
+    font-size: 2em;
+    color: #FFF;
+    opacity: 0;
+    text-shadow: 0px 0px 0px #FFF;
+    text-align: center;
+
+    transition: 3.644s top, 2s 1s opacity, 2s 1s text-shadow;
+}
+#intro.playing #intro_welcome {
+    top: calc(50% + 8vw);
+    opacity: 1;
+    text-shadow: 0px 0px 4px #FFF;
+}

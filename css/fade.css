@@ -1,0 +1,25 @@
+/* Style for the audio fade effect container */
+#fadeContainer {
+    display: none;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin: 20px auto;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Fade-in class */
+.fade-in {
+    display: block;
+    opacity: 1;
+}
+
+/* Fade-out class */
+.fade-out {
+    display: block;
+    opacity: 0;
+}

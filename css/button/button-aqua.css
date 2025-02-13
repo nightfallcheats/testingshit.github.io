@@ -1,0 +1,33 @@
+.button-aqua {
+	background-color: #000;
+	display: inline-block;
+	font-family: "Heading", sans-serif;
+	font-size: 1.2em;
+	color: #4d8c89;
+	border: 1px solid #4d8c89;
+	box-shadow: 0px 3px #4d8c89;
+	width: 10em;
+	position: relative;
+	top: 0px;
+	padding-top: 0.2em;
+	padding-bottom: 0.1em;
+
+	transition: 0.4s top, 0.2s color, 0.2s background-color, 0.2s box-shadow; 
+}
+
+.button-aqua:hover {
+	top: 1px;
+	box-shadow: 0px 2px #4d8c89;
+}
+
+.button-aqua:active {
+	top: 2px;
+	box-shadow: 0px 1px #4d8c89, 0px 1px 10px #4d8c89;
+	background-color: #4d8c89;
+	color: #000;
+}
+
+
+
+
+
